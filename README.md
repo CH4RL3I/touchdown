@@ -1,6 +1,6 @@
 # touchdown
 
-[![ci](https://github.com/CH4RL3I/touchdown/actions/workflows/ci.yml/badge.svg)](https://github.com/CH4RL3I/touchdown/actions/workflows/ci.yml)
+[![ci](https://github.com/CH4RL3I/touchdown/actions/workflows/ci.yml/badge.svg)](https://github.com/CH4RL3I/touchdown/actions/workflows/ci.yml) ![Python](https://img.shields.io/badge/python-3.11%2B-blue) ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 
 Vision-based drone landing perception in simulation: detect a landing pad, estimate the drone's
 pose relative to it, generate landing guidance, and close the loop so the simulated drone lands.
@@ -52,6 +52,9 @@ rejects and bridges bad frames) and at long range (25-40 % lower median position
 7 m). Near the ground it adds little in median terms: vision is already accurate, and what
 matters is the last 0.6 m, where the marker leaves the field of view and the estimate is dead
 reckoned. That blind phase, not perception noise, dominates the touchdown error.
+Below 0.5 m the chart even shows the filtered line above raw (median 9.4 mm vs 1.9 mm). That is a
+selection effect, not a filter bug: raw error only exists on the 24 % of frames that still detect the
+marker, while the filtered estimate is scored on every frame, including dead-reckoned ones.
 
 ![Pose error vs altitude](docs/pose_error_vs_altitude.png)
 
