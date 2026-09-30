@@ -89,9 +89,9 @@ def write_video(
     level: float,
     gif: Path | None,
     mp4: Path | None,
-    stride: int = 3,
-    size: tuple[int, int] = (400, 300),
-    colors: int = 64,
+    stride: int = 4,
+    size: tuple[int, int] = (360, 270),
+    colors: int = 32,
     max_time: float = 60.0,
 ) -> Episode:
     ep = run_episode(seed, level, record_frames=True, max_time=max_time)

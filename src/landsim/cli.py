@@ -82,7 +82,7 @@ def main(argv: list[str] | None = None) -> int:
     v.add_argument("--level", type=float, default=0.5)
     v.add_argument("--gif", default="docs/descent.gif")
     v.add_argument("--mp4", default=None)
-    v.add_argument("--stride", type=int, default=3, help="keep every n-th frame")
+    v.add_argument("--stride", type=int, default=4, help="keep every n-th frame")
     v.set_defaults(fn=_cmd_video)
 
     args = ap.parse_args(argv)

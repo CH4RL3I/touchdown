@@ -130,6 +130,14 @@ def sweep(levels: list[float], runs_per_level: int, seed0: int, workers: int) ->
     return rows
 
 
+def _plain_axes(a) -> None:
+    from matplotlib.ticker import NullFormatter, ScalarFormatter
+
+    for axis in (a.xaxis, a.yaxis):
+        axis.set_major_formatter(ScalarFormatter())
+        axis.set_minor_formatter(NullFormatter())
+
+
 def make_figures(eps: list[Episode], alt: dict, sweep_rows: list[dict], out: Path) -> None:
     import matplotlib
 
@@ -167,8 +175,9 @@ def make_figures(eps: list[Episode], alt: dict, sweep_rows: list[dict], out: Pat
         a.set_xlabel("true altitude (m)")
         a.set_ylabel(f"{title.lower()} ({unit})")
         a.set_title(title)
-        a.set_xticks([0.3, 0.7, 1.5, 2.5, 4, 6, 8, 10])
-        a.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
+        a.set_xticks([0.3, 0.7, 1.5, 3, 6, 10])
+        a.set_yticks([0.003, 0.01, 0.03, 0.1, 0.3, 1.0] if key == "pos" else [0.2, 0.5, 1, 2, 5])
+        _plain_axes(a)
         a.invert_xaxis()
     ax[0].legend(frameon=False, fontsize=8)
     fig.suptitle(f"Pose error vs altitude ({len(eps)} closed-loop runs)", y=1.02)
@@ -189,8 +198,8 @@ def make_figures(eps: list[Episode], alt: dict, sweep_rows: list[dict], out: Pat
     a.set_ylabel("fraction of frames")
     a.set_ylim(-0.02, 1.02)
     a.set_title("Detection rate vs altitude (nuisance 0.5)")
-    a.set_xticks([0.3, 0.7, 1.5, 2.5, 4, 6, 8, 10])
-    a.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
+    a.set_xticks([0.3, 0.7, 1.5, 3, 6, 10])
+    _plain_axes(a)
     a.invert_xaxis()
     a.legend(frameon=False, fontsize=8)
     if sweep_rows:
@@ -245,7 +254,7 @@ def make_figures(eps: list[Episode], alt: dict, sweep_rows: list[dict], out: Pat
     a.set_xlabel("east (m)")
     a.set_ylabel("north (m)")
     a.set_title("Touchdown positions")
-    a.legend(frameon=False, fontsize=7, loc="upper right")
+    a.legend(frameon=False, fontsize=7, loc="lower right")
     a = ax[1]
     a.hist(r, bins=np.linspace(0, max(0.3, r.max() * 1.05), 20), color=FILT, alpha=0.85)
     a.axvline(np.median(r), color=RAW, ls="--", label=f"median {np.median(r) * 100:.1f} cm")

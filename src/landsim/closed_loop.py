@@ -105,19 +105,19 @@ def run_episode(
             world.p, world.R, scn.nuisance, world.t, v_true, world.omega_b, rng_img
         )
 
-        t0 = time.perf_counter()
+        t0 = time.process_time()
         if imu is not None:
             estimator.predict(imu.f_b, imu.w_b)
         est_prior = estimator.estimate()
-        t1 = time.perf_counter()
+        t1 = time.process_time()
         prior = None if est_prior is None else (est_prior.p, est_prior.R_wc)
         meas = perception.measure(gray, prior)
-        t2 = time.perf_counter()
+        t2 = time.process_time()
         estimator.update(meas)
         est = estimator.estimate()
-        t3 = time.perf_counter()
+        t3 = time.process_time()
         cmd = guidance.step(est, dt)
-        t4 = time.perf_counter()
+        t4 = time.process_time()
 
         logs["t"].append(world.t)
         logs["p"].append(world.p.copy())
