@@ -1,0 +1,228 @@
+{
+  "nominal": {
+    "runs": 100,
+    "landed": 86,
+    "success": 84,
+    "success_rate": 0.84,
+    "success_radius_m": 0.25,
+    "aborted_or_timeout": {
+      "marker lost too long": 13,
+      "excessive lateral error near ground": 1
+    },
+    "touchdown_error_m": {
+      "mean": 0.11054774543086354,
+      "median": 0.09885012293815804,
+      "p90": 0.18616224762021338,
+      "p95": 0.20824609096515412,
+      "max": 0.5756963937291698,
+      "rms": 0.1338816121165905,
+      "within_pad_half_size": 1.0
+    },
+    "detection_rate_above_commit_altitude": 0.9328114339067045,
+    "mean_descent_time_s": 10.9972868217054,
+    "runtime_ms": {
+      "perception_mean": 2.3198429505674754,
+      "filter_mean": 0.3791421747771028,
+      "guidance_mean": 0.028056549336435175,
+      "total_mean": 2.727041674681014,
+      "total_p95": 7.071000000001648,
+      "total_p99": 8.26914000001139,
+      "total_max": 14.113000000008924,
+      "fps_at_mean": 366.69773303591757,
+      "fps_at_p95": 141.42271248759255,
+      "frames": 31194
+    }
+  },
+  "error_vs_altitude": {
+    "bins": [
+      {
+        "alt_lo": 0.15,
+        "alt_hi": 0.5,
+        "frames": 2599,
+        "raw_pos_med": 0.0018897285224195987,
+        "raw_pos_p90": 0.00419190901035302,
+        "raw_att_med": 0.2137001595139449,
+        "raw_att_p90": 0.5208570515990215,
+        "filt_pos_med": 0.009397757517753924,
+        "filt_pos_p90": 0.05963902614049843,
+        "filt_att_med": 0.2204085905980692,
+        "filt_att_p90": 0.5956702732372042,
+        "detect_rate": 0.2443247402847249,
+        "large_rate": 0.0,
+        "small_rate": 0.2443247402847249
+      },
+      {
+        "alt_lo": 0.5,
+        "alt_hi": 1.0,
+        "frames": 3705,
+        "raw_pos_med": 0.006040862729901791,
+        "raw_pos_p90": 0.017767248738399532,
+        "raw_att_med": 0.39411286140531004,
+        "raw_att_p90": 1.1976501760422318,
+        "filt_pos_med": 0.006309733248747164,
+        "filt_pos_p90": 0.021756655883731605,
+        "filt_att_med": 0.27248256562276413,
+        "filt_att_p90": 0.789853625748622,
+        "detect_rate": 0.893387314439946,
+        "large_rate": 0.0,
+        "small_rate": 0.893387314439946
+      },
+      {
+        "alt_lo": 1.0,
+        "alt_hi": 2.0,
+        "frames": 5371,
+        "raw_pos_med": 0.024358125479234785,
+        "raw_pos_p90": 0.09087719184577475,
+        "raw_att_med": 0.9397139744301728,
+        "raw_att_p90": 3.281804734109854,
+        "filt_pos_med": 0.020025563259664817,
+        "filt_pos_p90": 0.08792603517731137,
+        "filt_att_med": 0.5252162712234746,
+        "filt_att_p90": 1.7246014984820555,
+        "detect_rate": 0.9335319307391547,
+        "large_rate": 0.07372928691118973,
+        "small_rate": 0.859802643827965
+      },
+      {
+        "alt_lo": 2.0,
+        "alt_hi": 3.0,
+        "frames": 3297,
+        "raw_pos_med": 0.023434475283101927,
+        "raw_pos_p90": 0.18536218971154161,
+        "raw_att_med": 0.4730988998541752,
+        "raw_att_p90": 4.53743433715068,
+        "filt_pos_med": 0.019033950833325493,
+        "filt_pos_p90": 0.08980738674280829,
+        "filt_att_med": 0.3791880782485064,
+        "filt_att_p90": 1.6214871622071894,
+        "detect_rate": 0.9269032453745829,
+        "large_rate": 0.7370336669699727,
+        "small_rate": 0.18986957840461025
+      },
+      {
+        "alt_lo": 3.0,
+        "alt_hi": 5.0,
+        "frames": 4486,
+        "raw_pos_med": 0.04453450686688899,
+        "raw_pos_p90": 0.14228526204244404,
+        "raw_att_med": 0.6016820966664334,
+        "raw_att_p90": 1.9238424429655618,
+        "filt_pos_med": 0.042361073374436356,
+        "filt_pos_p90": 0.14818904940141953,
+        "filt_att_med": 0.42553572931125555,
+        "filt_att_p90": 1.3866690730575186,
+        "detect_rate": 0.9322336156932679,
+        "large_rate": 0.8778421756576015,
+        "small_rate": 0.05439144003566652
+      },
+      {
+        "alt_lo": 5.0,
+        "alt_hi": 7.0,
+        "frames": 3986,
+        "raw_pos_med": 0.13027924027246038,
+        "raw_pos_p90": 0.3137531343234393,
+        "raw_att_med": 1.2196590929315072,
+        "raw_att_p90": 2.792727248441116,
+        "filt_pos_med": 0.11618916889465708,
+        "filt_pos_p90": 0.2878997326498392,
+        "filt_att_med": 0.7579319254417918,
+        "filt_att_p90": 1.9870643042816742,
+        "detect_rate": 0.9460612142498745,
+        "large_rate": 0.924234821876568,
+        "small_rate": 0.021826392373306573
+      },
+      {
+        "alt_lo": 7.0,
+        "alt_hi": 9.0,
+        "frames": 4148,
+        "raw_pos_med": 0.2714518251698461,
+        "raw_pos_p90": 0.544121910467078,
+        "raw_att_med": 1.9201062917803864,
+        "raw_att_p90": 3.779123836449323,
+        "filt_pos_med": 0.16271336954476778,
+        "filt_pos_p90": 0.3670298653178582,
+        "filt_att_med": 1.0593270455327084,
+        "filt_att_p90": 2.4050929869991493,
+        "detect_rate": 0.9628736740597879,
+        "large_rate": 0.9628736740597879,
+        "small_rate": 0.0
+      },
+      {
+        "alt_lo": 9.0,
+        "alt_hi": 11.5,
+        "frames": 3602,
+        "raw_pos_med": 0.28872461306041525,
+        "raw_pos_p90": 0.8724526264366063,
+        "raw_att_med": 1.6363458867276506,
+        "raw_att_p90": 5.048056778429463,
+        "filt_pos_med": 0.2186001237403963,
+        "filt_pos_p90": 0.6435997023417228,
+        "filt_att_med": 1.0633141163688014,
+        "filt_att_p90": 2.6349625884632775,
+        "detect_rate": 0.8981121599111604,
+        "large_rate": 0.897834536368684,
+        "small_rate": 0.000277623542476402
+      }
+    ]
+  },
+  "nuisance_sweep": [
+    {
+      "level": 0.0,
+      "runs": 8,
+      "detection_rate": 0.9828345070422535,
+      "success_rate": 1.0,
+      "landed": 8,
+      "touchdown_median": 0.1065882495590453,
+      "aborts": {}
+    },
+    {
+      "level": 0.25,
+      "runs": 8,
+      "detection_rate": 0.9559306141584623,
+      "success_rate": 0.875,
+      "landed": 7,
+      "touchdown_median": 0.10841635882230709,
+      "aborts": {
+        "marker lost too long": 1
+      }
+    },
+    {
+      "level": 0.5,
+      "runs": 8,
+      "detection_rate": 0.9550140581068416,
+      "success_rate": 0.875,
+      "landed": 7,
+      "touchdown_median": 0.10256360298997746,
+      "aborts": {
+        "marker lost too long": 1
+      }
+    },
+    {
+      "level": 0.75,
+      "runs": 8,
+      "detection_rate": 0.831858407079646,
+      "success_rate": 0.5,
+      "landed": 5,
+      "touchdown_median": 0.12747847278813262,
+      "aborts": {
+        "marker lost too long": 3
+      }
+    },
+    {
+      "level": 1.0,
+      "runs": 8,
+      "detection_rate": 0.7279193835210432,
+      "success_rate": 0.25,
+      "landed": 2,
+      "touchdown_median": 0.06482419553311206,
+      "aborts": {
+        "marker lost too long": 6
+      }
+    }
+  ],
+  "seeds": [
+    1000,
+    1099
+  ],
+  "level": 0.5
+}
